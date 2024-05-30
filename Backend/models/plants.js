@@ -15,14 +15,8 @@ const plantSchema = new mongoose.Schema({
 // for capstone will need mutiple schema or multiple models
 
 
-
-
-//  Created an index
-
-
 // plantSchema.index({ common_name: 1 });
 // export default mongoose.model('plant', plantSchema)
-
 
 // or you can write it like this
 const plant = mongoose.model('plants', plantSchema)

@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
     res.json('hello! From Server')
 })
 
+//First index route
 app.get('/api/plants', async (req, res) => {
     try {
         const plants = await plant.find()
