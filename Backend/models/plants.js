@@ -12,7 +12,7 @@ const plantSchema = new mongoose.Schema({
 }, { timestamp: true })
 
 //MIGHT WANT WANT ADD A USER
-//user: {type: String}
+//user: { type: String, required: true }
 // might be an object id later.
 
 
