@@ -1,29 +1,26 @@
-import mongoose from "mongoose";
+import Plant from './plant.js';
 
-const plantSchema = new mongoose.Schema({
-    common_name: { type: String, required: true },
-    plant_family: { type: String, required: true},
-    scientific_name: { type: String,required: true },
-    sunlight_requirements: { type: String, required: true },
-    water_requirements: { type: String, required: true },
-    region: { type: String, required: true },
-    grow_zone: { type: String, required: true },
-    hardiness: { type: String, required: true },
-}, { timestamp: true })
+import flowerPlantsSeed from '../db/flowerPlants.js';
+import gardenPlantsSeed from '../db/gardenPlants.js';
+import herbPlantsSeed from '../db/herbPlants.js';
+import treePlantsSeed from '../db/treePlants.js';
 
-// WILL NEED TO ADD A USER PROPERTY  user: {type: String, require: true}
-// for capstone will need mutiple schema or multiple models
+async function seedData(){
+    try {
+        await Plant.deleteMany({});
+        //BLOCKER ONLY NEEDED ON 
+        // await Garden.deleteMany({});
+        // await Herb.deleteMany({});
 
+        await Plant.insertMany([...flowerPlantsSeed, ...gardenPlantsSeed, ...herbPlantsSeed, ...treePlantsSeed, ])
 
+        //BLOCKER ONLY NEEDED ON 
+        // await Garden.insertMany(gardenPlantsSeed)
+        // await Herb.insertMany(herbPlantsSeed)
+        console.log("Seeded database correctly")
+    }catch(e){
+        console.log("Error seeding data: ", e)
+    }
+}
 
-
-//  Created an index
-
-
-// plantSchema.index({ common_name: 1 });
-// export default mongoose.model('plant', plantSchema)
-
-
-// or you can write it like this
-const plant = mongoose.model('plants', plantSchema)
-export default plant
+export {seedData}
