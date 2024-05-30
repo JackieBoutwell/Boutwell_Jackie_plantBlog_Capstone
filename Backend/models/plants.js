@@ -11,6 +11,11 @@ const plantSchema = new mongoose.Schema({
     hardiness: { type: String, required: true },
 }, { timestamp: true })
 
+//MIGHT WANT WANT ADD A USER
+//user: {type: String}
+// might be an object id later.
+
+
 // WILL NEED TO ADD A USER PROPERTY  user: {type: String, require: true}
 // for capstone will need mutiple schema or multiple models
 
