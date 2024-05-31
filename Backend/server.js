@@ -13,6 +13,7 @@ const app = express()
 //Middleware
 app.use('/api/plants', plantRoutes)
 
+app.use(express.json())
 
 
 app.get("/", (req, res) => {

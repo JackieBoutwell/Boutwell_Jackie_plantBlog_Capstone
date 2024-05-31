@@ -16,11 +16,10 @@ export const createPlants = async (req, res) => {
         const plants = await Plant.create(req.body)
         res.status(200).json(plants)
     } catch {
-        console.log(err.message)
-        res.status(400).json(err)
+        console.log('didnt work')
+        res.status(400).json('didnt work')
     }
 }
-
 
 export const deletePlants = async (req, res) => {
     try {
