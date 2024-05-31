@@ -11,10 +11,8 @@ let port = (8080)
 const app = express()
 
 //Middleware
-app.use('/api/plants', plantRoutes)
-
 app.use(express.json())
-
+app.use('/api/plants', plantRoutes)
 
 app.get("/", (req, res) => {
     res.json('hello! From Server')

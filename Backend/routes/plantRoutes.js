@@ -1,18 +1,24 @@
 import express from 'express';
-import { getPlants, createPlants, deletePlants} from '../controllers/plantController.js'
+import { getAllPlants, getOnePlant, createPlant, deletePlant, updatePlant } from '../controllers/plantController.js'
 
 // import { getAllPlants, getOnePlant, createPlant, deletePlant, updatePlant } from "../controller/plants.js"
 
 const router = express.Router();
 
-//GET- will use the callback function in  plantcontroller.js
-router.get('/', getPlants);
+// GET all plant
+router.get('/', getAllPlants)
 
-// //POST api/plants
-router.post('/', createPlants);
+// GET a single plant
+router.get('/:id', getOnePlant)
 
-// // DELETE api/plants
-router.delete('/:id', deletePlants);
+// POST a new plant
+router.post('/', createPlant)
+
+// DELETE a plant
+router.delete('/:id', deletePlant)
+
+// UPDATE a plant
+router.patch('/:id', updatePlant)
 
 
 // // GET all plant
