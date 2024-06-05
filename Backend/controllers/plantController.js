@@ -5,8 +5,9 @@ import Plant from "../models/plants.js"
 export const getAllPlants = async (req, res) => {
     try {
         let plantData = await Plant.find({})
+        console.log(plantData)
         res.json(plantData);
-        res.json({ message: "Get all plant" })
+        // res.json({ message: "Get all plant" })
     } catch (err) {
         console.log(err.message)
         res.status(400).json(err)

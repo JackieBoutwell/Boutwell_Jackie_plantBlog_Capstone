@@ -5,12 +5,14 @@ import 'dotenv/config'
 //import Plants from './models/plants.js'
 
 import mongoConfig from './config.js'
-import plantRoutes from'./routes/plantRoutes.js'
+import plantRoutes from './routes/plantRoutes.js'
+import cors from 'cors'
 
 let port = (8080)
 const app = express()
 
 //Middleware
+app.use(cors())
 app.use(express.json())
 app.use('/api/plants', plantRoutes)
 
