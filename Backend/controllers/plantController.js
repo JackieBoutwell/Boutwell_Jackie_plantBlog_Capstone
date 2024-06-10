@@ -6,7 +6,7 @@ export const getAllPlants = async (req, res) => {
     try {
         let plantData = await Plant.find({})
         console.log(plantData)
-        res.json(plantData);
+        res.send(plantData);
         // res.json({ message: "Get all plant" })
     } catch (err) {
         console.log(err.message)
@@ -47,6 +47,16 @@ console.log(req.body)
     }
 };
 
+//POST Create a comment
+export const createComment = async (req, res) => {
+console.log(req.body)
+    try {
+        let plantData = await Plant.create(req.body)
+        res.status(200).json(plantData)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
+};
 //DELETE a plant
 export const deletePlant = async (req, res) => {
   try {

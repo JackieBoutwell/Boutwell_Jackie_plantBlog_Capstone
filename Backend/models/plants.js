@@ -2,9 +2,10 @@ import mongoose from "mongoose";
 
 const plantSchema = new mongoose.Schema({
     common_name: { type: String, required: true },
-    Categories: { type: String, required: true},
-    Climat: { type: String, required: true},
+    Categories: { type: String, required: true },
+    Climate: { type: String, required: true },
     Zone: { type: String, required: true },
+    Img: { type: String, required: true }
 }, { timestamp: true })
 
 //MIGHT WANT WANT ADD A USER

@@ -10,18 +10,18 @@ const NavbarComponent = () => {
     return (
         <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">Plant Blog</Navbar.Brand>
+        <Navbar.Brand href="/#home">Plant Blog</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">SavedPlants</Nav.Link>
-            <Nav.Link href="#link">Search</Nav.Link>
+            <Nav.Link href="/SavedData">Saved-Plants</Nav.Link>
+              <Nav.Link href="/SearchData">Search-Plants</Nav.Link>
             <NavDropdown title="Interact" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Add a Comment.</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="/Comment">Add a Comment.</NavDropdown.Item>
+              <NavDropdown.Item href="/Connect">
                 Connect w/ Others
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Join Email List</NavDropdown.Item>
+              <NavDropdown.Item href="/Email">Join Email List</NavDropdown.Item>
               <NavDropdown.Divider />
                    </NavDropdown>
           </Nav>

@@ -1,17 +1,27 @@
 const PlantDetails = ({ plant, imOnSaved }) => {
-
-    
-   async  function handleSaved() {
-        console
-        let body = {
-            common_name: plant["Common name (fr.)"]
-          //  Categories: {plant.Categories}
-          //  Categories: {plant.Climat}
-          //  Zone: {plant.Zone}
-
-       }
-       console.log(plant)
+    console.log("from plantdetaiukls");
+    console.log(plant);
+    const handleSave = async (plant) => {
+        console.log(plant); 
+        const test = {
+            "common_name": plant["Common name (fr.)"],
+            Categories: plant.Categories,
+            Climate: plant.Climat,
+            Zone: plant.Zone[0] + "-" + plant.Zone[1],
+            Img: plant.Img
+        };
+        const response = await fetch("http://localhost:8080/api/plants/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(test),
+        });
+        const result = await response.json();
+        console.log(result);
     }
+
+    console.log("plant", plant)
     
     return (
         <div className="plant-card" >
@@ -21,12 +31,13 @@ const PlantDetails = ({ plant, imOnSaved }) => {
             <p>
                 {plant.createAt}
             </p> */}
-            <h4>{plant["Common name (fr.)"]}</h4>
+
+            <h4>{imOnSaved == "true" ? plant.common_name : plant["Common name (fr.)"]}</h4>
             <img src={plant.Img} alt="" />
             <p>Categories: {plant.Categories}</p>
-            <p>Climat: {plant.Climat}</p>
+            <p>Climate: {plant.Climate}</p>
             <p>Zone: {plant.Zone}</p>
-            {imOnSaved == 'false' && <button  onClick={handleSaved}> Save</button>}
+            {imOnSaved == 'false' && <button onClick={() => handleSave(plant)}> Save</button>}
             <br>
             </br>
            {imOnSaved == 'true' && <button>Delete</button>} 

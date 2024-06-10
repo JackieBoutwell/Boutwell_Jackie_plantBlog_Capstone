@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllPlants, getOnePlant, createPlant, deletePlant, updatePlant } from '../controllers/plantController.js'
+import { getAllPlants, getOnePlant, createPlant, createComment, deletePlant, updatePlant } from '../controllers/plantController.js'
 
 // import { getAllPlants, getOnePlant, createPlant, deletePlant, updatePlant } from "../controller/plants.js"
 
@@ -14,11 +14,16 @@ router.get('/:id', getOnePlant)
 // POST a new plant
 router.post('/', createPlant)
 
+//POST a Comment
+router.post('/', createComment)
+
 // DELETE a plant
 router.delete('/:id', deletePlant)
 
 // UPDATE a plant
 router.patch('/:id', updatePlant)
+
+
 
 
 // // GET all plant
@@ -28,7 +33,7 @@ router.patch('/:id', updatePlant)
 // router.get('/:id', getOnePlant)
 
 // // POST a new plant
-// router.post('/', createPlant)
+// router.post('/', createComment)
 
 // // DELETE a plant
 // router.delete('/:id', deletePlant)
