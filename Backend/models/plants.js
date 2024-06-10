@@ -2,13 +2,9 @@ import mongoose from "mongoose";
 
 const plantSchema = new mongoose.Schema({
     common_name: { type: String, required: true },
-    plant_family: { type: String, required: true},
-    scientific_name: { type: String,required: true },
-    sunlight_requirements: { type: String, required: true },
-    water_requirements: { type: String, required: true },
-    region: { type: String, required: true },
-    grow_zone: { type: String, required: true },
-    hardiness: { type: String, required: true },
+    Categories: { type: String, required: true},
+    Climat: { type: String, required: true},
+    Zone: { type: String, required: true },
 }, { timestamp: true })
 
 //MIGHT WANT WANT ADD A USER
@@ -24,5 +20,5 @@ const plantSchema = new mongoose.Schema({
 // export default mongoose.model('plant', plantSchema)
 
 // or you can write it like this
-const plant = mongoose.model('plants', plantSchema)
+const plant = mongoose.model('savedPlants', plantSchema)
 export default plant

@@ -37,10 +37,10 @@ export const getOnePlant = async (req, res) => {
 //POST a new plant data set
 
 export const createPlant = async (req, res) => {
-    const { common_name, plant_family, scientific_name, hardiness, sunlight_requirements, water_requirements, region, grow_zone } = req.body
+    // const { common_name, plant_family, scientific_name, hardiness, sunlight_requirements, water_requirements, region, grow_zone } = req.body
 console.log(req.body)
     try {
-        let plantData = await Plant.create({ common_name, plant_family, scientific_name, hardiness, sunlight_requirements, water_requirements, region, grow_zone })
+        let plantData = await Plant.create(req.body)
         res.status(200).json(plantData)
     } catch (error) {
         res.status(400).json({error: error.message})

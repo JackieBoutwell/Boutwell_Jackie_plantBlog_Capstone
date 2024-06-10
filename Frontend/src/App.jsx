@@ -1,12 +1,28 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-import { useEffect, useState } from 'react';
-
+import { useReducer, useEffect, useState } from 'react';
+import Nav from 'react-bootstrap/Nav';
+import { reducer } from "./Components/PlantManager"
 //page and components
 import Home from './Pages/Home'
 import Navbar from './Components/Nabar'
+import Saved from "./Pages/Saved"
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+const getPlants = async () => {
+           const response = await fetch('http://localhost:8080/api/plants')
+            const json = await response.json()
+    console.log("data", json)
+    return json
+}
+    
 
 function App() {
+
+      let initialState = getPlants()
+    const [state, dispatch] = useReducer(reducer, initialState);
+
   const title = "Welcome to the plant blog";
 
 //  const [starwars, setStarwars] = useState(null) 
@@ -47,24 +63,30 @@ function App() {
  
 
   return (
-<> 
+    <> 
       <div className="App">
         <BrowserRouter>
           <Navbar />
+ 
+        <div className="content">
+          {/* <Home /> */}
+          <h1>{title}</h1>
+      </div>
           <div className="pages">
             <Routes>
               <Route
                 path="/"
-                element={ <Home /> }
+                element={ <Home dispatch={dispatch} state={state} /> }
+              />
+               <Route
+                path="/Saved"
+                element={ <Saved dispatch={dispatch} state={state} /> }
               />
             </Routes>
         </div>
         </BrowserRouter>
 
-      <div className="content">
-          <Home />
-          <h1>{title}</h1>
-      </div>
+    
     </div>
   {/* <StarwarsDisplay data={data} /> */}
 </>

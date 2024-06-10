@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+//Adding connection string here.
 
 const mongoConfig = async () => {
     try {

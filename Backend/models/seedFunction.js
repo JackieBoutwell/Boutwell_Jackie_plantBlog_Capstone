@@ -8,13 +8,13 @@ import treePlantsSeed from '../db/treePlants.js';
 async function seedData(){
     try {
         await Plant.deleteMany({});
-        //BLOCKER ONLY NEEDED ON 
+        //BLOCKER ONLY NEEDED ONE
         // await Garden.deleteMany({});
         // await Herb.deleteMany({});
 
         await Plant.insertMany([...flowerPlantsSeed, ...gardenPlantsSeed, ...herbPlantsSeed, ...treePlantsSeed, ])
 
-        //BLOCKER ONLY NEEDED ON 
+        //BLOCKER ONLY NEEDED ONE 
         // await Garden.insertMany(gardenPlantsSeed)
         // await Herb.insertMany(herbPlantsSeed)
         console.log("Seeded database correctly")
