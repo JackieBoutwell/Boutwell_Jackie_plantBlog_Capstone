@@ -1,9 +1,9 @@
-const PlantDetails = ({ plant, imOnSaved }) => {
-    console.log("from plantdetaiukls");
-    console.log(plant);
+import { useReducer } from 'react'
+
+const PlantDetails = ({ plant, imOnSaved, handleDelete }) => {
+
     const handleSave = async (plant) => {
-        console.log(plant); 
-        const test = {
+           const test = {
             "common_name": plant["Common name (fr.)"],
             Categories: plant.Categories,
             Climate: plant.Climat,
@@ -19,7 +19,7 @@ const PlantDetails = ({ plant, imOnSaved }) => {
         });
         const result = await response.json();
         console.log(result);
-    }
+    }   
 
     console.log("plant", plant)
     
@@ -40,7 +40,7 @@ const PlantDetails = ({ plant, imOnSaved }) => {
             {imOnSaved == 'false' && <button onClick={() => handleSave(plant)}> Save</button>}
             <br>
             </br>
-           {imOnSaved == 'true' && <button>Delete</button>} 
+            {imOnSaved == 'true' && <button onClick={() => handleDelete(plant._id)}>Delete</button>} 
       
         </div>
     )
