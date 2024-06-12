@@ -45,17 +45,17 @@ Create a full-stack web application
 There are possibilities to expand app for more features like:
 
 1. Making it more interactive for the users. adding a comment box or a place where you can buy the plants you see.
-2. Have one or more complex user interface modules such as a carousel, drag and drop, a sticky nav, tooltips, etc.
-3. Change single-page webiste to be more complex, many different routes.
+2. Have one or more complex user interface modules such as a carousel, drag and drop.
+3. CMake the comment and email list active
 4. I would like to have the pictures of each plant over and display the info about each plant on the back of a "card".
-5. Look into localstorage so you can save data to the user's browser.
+5. Include at least one form of user authentication/authorization within the application.
 
 ## Screenshots
 
 1. Home page:
    <br>
-   <img src="./src/static/320-react.png" width="850" height="600">
+   <img src="./Frontend/src/pics/" width="850" height="600">
 
 ## Site link
 
-https://remarkable-squirrel-436d78.netlify.app/
+https://boutwell-jackie-plantblog-capstone-3.onrender.com/
