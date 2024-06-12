@@ -54,7 +54,7 @@ There are possibilities to expand app for more features like:
 
 1. Home page:
    <br>
-   <img src="./Frontend/src/pics/" width="850" height="600">
+   <img src="./Frontend/src/pics/plantblog.png" width="850" height="600">
 
 ## Site link
 
