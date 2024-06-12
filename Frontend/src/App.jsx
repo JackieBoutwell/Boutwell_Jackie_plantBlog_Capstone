@@ -6,6 +6,7 @@ import { reducer } from "./Components/PlantManager"
 import Home from './Pages/Home'
 import Navbar from './Components/Nabar'
 import SavedData from './Pages/SavedData'
+import SearchData from './Pages/SearchData'
 import MakeComments from './Pages/Comment'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -62,6 +63,10 @@ function App() {
                <Route
                 path="/SavedData"
                 element={ <SavedData dispatch={dispatch} state={state} /> }
+              />
+              <Route
+                path="/SearchData"
+                element={ <SearchData dispatch={dispatch} state={state} /> }
               />
                    <Route
                 path="/Comment"

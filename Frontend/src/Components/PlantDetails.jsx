@@ -1,7 +1,6 @@
 import { useReducer } from 'react'
 
 const PlantDetails = ({ plant, imOnSaved, handleDelete }) => {
-
     const handleSave = async (plant) => {
            const test = {
             "common_name": plant["Common name (fr.)"],
