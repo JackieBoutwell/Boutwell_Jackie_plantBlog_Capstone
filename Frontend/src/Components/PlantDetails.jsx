@@ -1,4 +1,5 @@
 import { useReducer } from 'react'
+import { BASE_URL } from '../App'
 
 const PlantDetails = ({ plant, imOnSaved, handleDelete }) => {
     const handleSave = async (plant) => {
@@ -9,7 +10,7 @@ const PlantDetails = ({ plant, imOnSaved, handleDelete }) => {
             Zone: plant.Zone[0] + "-" + plant.Zone[1],
             Img: plant.Img
         };
-        const response = await fetch("http://localhost:8080/api/plants/", {
+        const response = await fetch(BASE_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import PlantDetails from "../Components/PlantDetails";
+import { BASE_URL } from "../App"
 
 function Saved() {
   const [savedPlants, setSavedPlants] = useState([]);
 
   const getPlants = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/plants");
+      const response = await fetch(BASE_URL);
       const data = await response.json();
       // setSavedPlants(await response.json());
       //console.log("data", json);
@@ -27,7 +28,7 @@ function Saved() {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/plants/${id}`,
+        `${BASE_URL + id}`,
         {
           method: "DELETE",
           headers: {

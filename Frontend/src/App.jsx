@@ -11,9 +11,13 @@ import MakeComments from './Pages/Comment'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+export const BASE_URL = import.meta.env.DEV ? 
+'http://localhost:8080/api/plants' : 
+'https://todos-backend-ybjq.onrender.com/api/plants'
+
 
 const getPlants = async () => {
-           const response = await fetch('http://localhost:8080/api/plants')
+           const response = await fetch(BASE_URL)
             const json = await response.json()
     console.log("data", json)
     return json
