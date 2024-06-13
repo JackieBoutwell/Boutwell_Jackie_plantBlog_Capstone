@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const BASE_URL = import.meta.env.DEV ? 
 'http://localhost:8080/api/plants' : 
-'https://boutwell-jackie-plantblog-capstone-3.onrender.com/api/plants'
+'https://boutwell-jackie-plantblog-capstone-2.onrender.com/api/plants'
 
 
 const getPlants = async () => {
@@ -61,7 +61,7 @@ function App() {
           <div className="pages">
             <Routes>
               <Route
-                path="/"
+                path="/Home"
                 element={ <Home dispatch={dispatch} state={state} /> }
               />
                <Route
